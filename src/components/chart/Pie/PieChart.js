@@ -1,0 +1,35 @@
+import { Pie } from "react-chartjs-2";
+
+const PieChart = ({ data }) => {
+  const PieOption = {
+    data: {
+      datasets: [
+        {
+          data: data?.bestSellingProduct?.map((selling) => selling.count),
+          backgroundColor: ["#10B981", "#3B82F6", "#F97316", "#0EA5E9"],
+          label: "Dataset 1",
+        },
+      ],
+      labels: data?.bestSellingProduct?.map((selling) =>
+        typeof selling?._id === "object"
+          ? selling._id.vi.slice(0, 20)
+          : selling._id.slice(0, 20)
+      ),
+    },
+    options: {
+      responsive: true,
+      cutoutPercentage: 80,
+    },
+    legend: {
+      display: false,
+    },
+  };
+
+  return (
+    <div>
+      <Pie {...PieOption} className="chart" />
+    </div>
+  );
+};
+
+export default PieChart;

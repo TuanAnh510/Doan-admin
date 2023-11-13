@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+
+  <title>NPH Digital - Trang Quản lý</title>
+  <meta name="description" content="NPH Digital - Trang quản lý chuyên nghiệp cho cửa hàng linh kiện điện tử" />
+  <meta property="og:title" content="NPH Digital - Trang Quản lý" />
+  <meta property="og:type" content="website" />
+
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <title>NPH Digital Admin</title>
+</head>
+
+<body class="antialiased">
+  <noscript>Chào mừng bạn đến với trang quản lý của NPH Digital!</noscript>
+  <div id="root"></div>
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker
+          .register("./serviceworker.js")
+          .then((reg) => console.log("Success: ", reg.scope))
+          .catch((err) => console.log("Failure: ", err));
+      });
+    }
+  </script>
+</body>
+
+</html>
